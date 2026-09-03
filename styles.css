@@ -443,9 +443,14 @@ getresponse-form[data-ready] .form-loading {
 }
 
 .testimonial img {
+  display: block;
   width: min(680px, 100%);
+  height: auto !important;
+  max-height: none;
+  aspect-ratio: 611 / 382;
   margin: 18px auto 0;
   border-radius: 12px;
+  object-fit: contain;
   box-shadow: var(--shadow);
 }
 
