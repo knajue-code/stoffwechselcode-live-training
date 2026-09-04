@@ -3,6 +3,15 @@
 
   var target = document.getElementById("anmeldung");
   var links = document.querySelectorAll('a[href="#anmeldung"]');
+  var registrationForm = document.querySelector("getresponse-form");
+
+  if (registrationForm) {
+    registrationForm.addEventListener("click", function () {
+      if (typeof window.fbq === "function") {
+        window.fbq("track", "InitiateCheckout");
+      }
+    }, { once: true, capture: true });
+  }
 
   if (!target) return;
 
