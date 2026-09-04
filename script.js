@@ -17,6 +17,13 @@
 
   links.forEach(function (link) {
     link.addEventListener("click", function (event) {
+      if (typeof window.fbq === "function") {
+        window.fbq("trackCustom", "RegistrationButtonClick", {
+          button_text: link.textContent.trim(),
+          button_location: link.getAttribute("data-track-location") || "unbekannt"
+        });
+      }
+
       event.preventDefault();
       window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY - 12);
       history.replaceState(null, "", "#anmeldung");
